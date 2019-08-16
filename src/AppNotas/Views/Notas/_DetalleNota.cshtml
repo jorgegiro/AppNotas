@@ -1,0 +1,34 @@
+﻿@using ServiciosDeAplicacion.ViewModels;
+@model NotaListadoVM;
+
+<div class="col-sm-12 col-md-6 col-lg-3 col-xl-2 ">
+    <div class="card mb-2 w-100 ">
+        <div class="card-body">
+            <h6 class="card-title text-muted">@Model.Titulo</h6>
+            <p class="card-text">@Html.Raw(Model.Contenido)</p>
+
+            <a asp-action="ConmutarAnclaje" asp-route-id="@Model.Id" class="pin"
+               alt="@Model.TextoTituloAnclada"
+               title="@Model.TextoTituloAnclada">
+                <i class="@Model.CssAnclada"></i>
+            </a>
+
+            <a asp-action="Editar" asp-route-id="@Model.Id"
+               alt="Editar"
+               title="Editar">
+                <i class="fas fa-pen-fancy"></i>
+            </a>
+
+            <a asp-route-id="@Model.Id"
+               alt="Delete"
+               title="Delete"
+               data-toggle="modal"
+               data-target="#modalBorrado"
+               data-id="@Model.Id">
+                <i class="fas fa-trash"></i>
+            </a>
+
+            <small class="ml-5 text-muted">@Model.FechaActualizacion</small>
+        </div>
+    </div>
+</div>

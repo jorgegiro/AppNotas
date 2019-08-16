@@ -1,0 +1,31 @@
+﻿@using ServiciosDeAplicacion.ViewModels;
+@model ListadoNotasVM;
+
+<div id="listadoNotas" class="row ml-1">
+    <div class="col">
+        <div class="row">
+            <div class="col">
+                <h4>Ancladas</h4>
+                <div id="notasAncladas" class="row">        
+                    @foreach (var nota in Model.NotasAncladas)
+                    {
+                        <partial name="_DetalleNota" model="@nota" />
+                    }        
+                </div>
+            </div>
+        </div>
+
+    
+        <div class="row">
+            <div class="col">
+                <h4>Sin anclar</h4>
+                <div id="notasAncladas" class="row">
+                    @foreach (var nota in Model.NotasSinAnclar)
+                    {
+                        <partial name="_DetalleNota" model="@nota" />
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

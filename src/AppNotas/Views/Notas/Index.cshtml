@@ -1,0 +1,19 @@
+﻿@using ServiciosDeAplicacion.ViewModels;
+@model ListadoNotasVM;
+
+<section id="notas" class="pt-5 pl-2 pr-2">
+    <partial name="_ConfirmacionBorradoNota" />
+    
+    @if(Model.ExistenNotas)
+    {
+        <div class="row mb-3">
+            <div class="col text-center px-2">
+                <input id="buscadorNotas" name="textoABuscar" class="form-control mr-sm-2" type="text" placeholder="Buscar" aria-label="Search" />
+            </div>
+        </div>        
+    }
+
+    <div id="contenidoNotas">
+        <partial name="_ListadoNotas" model="@Model" />
+    </div>
+</section>
