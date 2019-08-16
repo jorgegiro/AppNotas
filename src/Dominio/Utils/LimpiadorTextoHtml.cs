@@ -14,7 +14,7 @@ namespace Dominio.Utils
             HtmlDocument htmlDoc = new HtmlDocument();
             htmlDoc.LoadHtml(textoALimpiar);
 
-            string textoLimpio = htmlDoc.DocumentNode.InnerText;
+            string textoLimpio = HtmlEntity.DeEntitize(htmlDoc.DocumentNode.InnerText);
 
             return textoLimpio;
         }
