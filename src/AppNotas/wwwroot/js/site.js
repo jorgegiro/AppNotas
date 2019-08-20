@@ -38,6 +38,16 @@ $(document).ready(function () {
                 //});
         });
     });
+
+    $('#editarNota textarea').summernote({        
+        toolbar: [
+            ['style', ['bold', 'italic', 'underline', 'clear']],
+            ['font', ['strikethrough', 'superscript', 'subscript']],
+            ['color', ['forecolor']]
+        ]
+    });
+
+    $('.note-link-popover, .note-image-popover, .note-table-popover').remove();
 });
 
 

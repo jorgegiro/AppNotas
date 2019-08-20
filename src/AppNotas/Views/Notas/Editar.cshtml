@@ -6,7 +6,7 @@
     string accion = Model is NotaExistenteVM ? "Editar" : "Nueva";
 }
 
-<div class="col-md-8 mt-4">
+<div id="editarNota" class="col-md-8 mt-4">
     <div class="row">
         <div class="col">
             <h1>@accion Nota</h1>
@@ -27,16 +27,3 @@
         </div>
     </div>
 </div>
-
-@section Scripts
-{
-<script type="text/javascript">
-    $('textarea').summernote({
-        toolbar: [
-            ['style', ['bold', 'italic', 'underline', 'clear']],
-            ['font', ['strikethrough', 'superscript', 'subscript']],
-            ['color', ['forecolor']],
-        ]
-    });
-</script>
-}
